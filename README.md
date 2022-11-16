@@ -6,7 +6,7 @@ Créer un outil en ligne de commande pour calculer une température depuis une v
 
 ## Etapes
 
-1. Récupérer l'argument [la ville]
+1. Récupérer l'argument : **la ville**
 
 2. Récupérer les coordonnés GPS de cet argument [latitude/longitude] à l'aide de l'API suivante :
 
@@ -15,3 +15,15 @@ Créer un outil en ligne de commande pour calculer une température depuis une v
 3. Avec ces coordonnés, on récupére la température
 
 4. Affichage de la température
+
+## Architecture du projet
+
+1. Initialiser un projet node
+
+2. Télécharger axios et nodemon
+
+3. Une fonctionnalité = un module
+
+4. Un fichier de boostraping
+
+5. Clean code
