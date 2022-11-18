@@ -22,6 +22,8 @@ Créer un outil en ligne de commande pour calculer une température depuis une v
 
 2. Télécharger axios et nodemon
 
+`npm i axios && npm i -D nodemon`
+
 3. Une fonctionnalité = un module
 
 4. Un fichier de boostraping
