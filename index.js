@@ -5,6 +5,7 @@ init();
 
 function init() {
   const [, , city] = process.argv;
+
   if (!city) {
     console.error('Please insert a valid city name');
     process.exit(1);

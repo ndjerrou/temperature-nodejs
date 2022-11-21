@@ -7,14 +7,18 @@ module.exports = async (city) => {
 
   const API_KEY = process.env.API_KEY;
 
-  const {
-    data: { coord: coords },
-  } = await axios(OWP_ENDPOINT, {
-    params: {
-      q: city,
-      appid: API_KEY,
-    },
-  });
+  try {
+    const {
+      data: { coord: coords },
+    } = await axios(OWP_ENDPOINT, {
+      params: {
+        q: city,
+        appid: API_KEY,
+      },
+    });
 
-  calculateTemperature(coords, city);
+    calculateTemperature(coords, city);
+  } catch (err) {
+    console.err(err.message);
+  }
 };

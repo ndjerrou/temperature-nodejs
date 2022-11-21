@@ -5,21 +5,25 @@ module.exports = async ({ lon, lat }, city) => {
 
   const OWP_ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather';
 
-  const {
-    data: {
-      main: { temp: absoluteTemperature },
-    },
-  } = await axios(OWP_ENDPOINT, {
-    params: {
-      lat,
-      lon,
-      appid: API_KEY,
-    },
-  });
+  try {
+    const {
+      data: {
+        main: { temp: absoluteTemperature },
+      },
+    } = await axios(OWP_ENDPOINT, {
+      params: {
+        lat,
+        lon,
+        appid: API_KEY,
+      },
+    });
 
-  const temp = (absoluteTemperature - 273).toFixed(1);
+    const temp = (absoluteTemperature - 273).toFixed(1);
 
-  const cityCapitalized = city[0].toUpperCase() + city.slice(1);
+    const cityCapitalized = city[0].toUpperCase() + city.slice(1);
 
-  console.log(`À ${cityCapitalized}, il fait actuellement ${temp}°`);
+    console.log(`À ${cityCapitalized}, il fait actuellement ${temp}°`);
+  } catch (err) {
+    console.err(err.message);
+  }
 };
